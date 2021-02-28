@@ -1,0 +1,14 @@
+<p><%= @tweet.content %></p>
+
+<% if @tweet.user_id == current_user.id %>
+
+    <form method="POST" action="/tweets/<%= @tweet.id %>">
+        <input type="hidden" name="_method" value="patch">
+        <input type="text" name="content" value="<%= @tweet.content %>">
+
+        <input type="submit" value= "submit">
+    </form>
+    
+    
+<% end %> 
+

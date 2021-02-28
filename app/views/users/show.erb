@@ -1,0 +1,13 @@
+<h1>Welcome</h1>
+<h2>Here are tweets from user: <%= @user.username %> </h2>
+
+
+    <% @user.tweets.each do |tweet| %>
+        <% if tweet.user_id == @user.id %>
+         <div>
+         <li> <%= tweet.content %> </li>
+         </div>
+         <% end %>
+    <% end %>
+
+<a href="/tweets">Homepage</a>
